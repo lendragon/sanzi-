@@ -1,0 +1,372 @@
+<html>
+  <head>
+    <title>牛客登录系统</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1,  maximum-scale=1, user-scalable=no"
+    />
+    <style type="text/css">
+      html {
+        height: 100%;
+      }
+      fieldset {
+        width: 340px;
+        padding: 10px;
+        border-style: hidden;
+        border-radius: 5px;
+        margin: 0 -10px 0;
+      }
+      #WELCOME {
+        overflow: hidden;
+        position: absolute;
+        z-index: -3;
+        left: 20px;
+        top: 25px;
+        font-weight: 900;
+      }
+      #arrow {
+        overflow: hidden;
+        height: 150px;
+        width: 400px;
+        position: relative;
+        margin-top: -10px;
+      }
+      #arrow span {
+        width: 0;
+        height: 0;
+        font-size: 0;
+        overflow: hidden;
+        position: absolute;
+      }
+      span.arrow1 {
+        border-top: 150px solid;
+        border-left: 150px solid transparent;
+        border-right: 150px solid transparent;
+        right: -100px;
+        top: 0;
+        z-index: -2;
+        color: #b4f3e2;
+      }
+      span.arrow2 {
+        border-top: 90px solid;
+        border-left: 90px solid transparent;
+        border-right: 90px solid transparent;
+        right: -40px;
+        top: 0;
+        z-index: -1;
+        color: white;
+      }
+
+      input.submit {
+        background-color: #1ebf9b;
+      }
+      input.submit:hover {
+        background-color: rgb(120, 201, 0);
+      }
+      input.submit:active {
+        background-color: #1ebf9b;
+      }
+      input.input {
+        background-color: #f7f7fb;
+      }
+      input.input:hover {
+        background-color: #e9e9f1;
+      }
+      input.yzm {
+        background-color: #f7f7fb;
+      }
+      input.yzm:hover {
+        background-color: #e9e9f1;
+      }
+      input.yzm:active {
+        background-color: #f7f7fb;
+      }
+
+      div.mmdl:hover img.mmdl1 {
+        display: none;
+      }
+      div.weibo:hover img.weibo1 {
+        display: none;
+      }
+      div.QQ:hover img.QQ1 {
+        display: none;
+      }
+
+      img.mmdl1 {
+        display: block;
+        margin: 0 auto;
+      }
+      img.mmdl2 {
+        display: none;
+      }
+      img.weibo2 {
+        display: none;
+      }
+      img.QQ2 {
+        display: none;
+      }
+
+      div.mmdl:hover img.mmdl2 {
+        display: block;
+        margin: 0 auto;
+      }
+      div.weibo:hover img.weibo2 {
+        display: block;
+      }
+      div.QQ:hover img.QQ2 {
+        display: block;
+      }
+
+      @media only screen and (min-width: 960px) {
+        .hidden {
+          display: none;
+        }
+        .wrong {
+          display: block;
+        }
+      }
+      @media only screen and (max-width: 960px) {
+        .hidden {
+          display: block;
+        }
+        .wrong {
+          display: none;
+        }
+      }
+
+      .grey {
+        color: grey;
+      }
+      .user {
+        margin: 0 auto;
+      }
+      .greybackground {
+        background-color: #f7f7fb;
+      }
+
+      a.a:link {
+        color: #08b292;
+        text-decoration: none;
+      }
+      a.a:visited {
+        color: #08b292;
+      }
+      a.a:hover {
+        color: #08b292;
+      }
+      a.a:active {
+        color: #08b292;
+      }
+      a.b:link {
+        color: grey;
+        text-decoration: none;
+      }
+      a.b:visited {
+        color: grey;
+      }
+      a.b:hover {
+        color: blue;
+      }
+      a.b:active {
+        color: blue;
+      }
+
+      #section2 {
+        text-align: center;
+      }
+      #footer {
+        text-align: center;
+      }
+      #tAp {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 class="wrong">请在手机打开此页面</h1>
+
+    <div class="hidden">
+      <div id="arrow">
+        <span class="arrow1"></span>
+        <span class="arrow2"></span>
+      </div>
+
+      <div id="WELCOME">
+        <span style="font-size: 50px; color: #f7f7fb"> WELCOME </span>
+      </div>
+
+      <div id="header" style="margin: -100px 0 -10px 20px">
+        <h1>欢迎来到牛客</h1>
+      </div>
+
+      <div id="section1" style="margin: 0 0 -5px 20px">
+        <p class="grey">求职之前，先上牛客</p>
+      </div>
+
+      <div id="section2">
+        <form>
+          <!--输入界面-->
+          <div
+            class="user"
+            style="width: 340px; border-radius: 5px; font-size: 20px"
+          >
+            <fieldset class="greybackground">
+              中国
+              <select
+                class="greybackground"
+                style="
+                  border-style: hidden;
+                  font-size: 20px;
+                  outline: none;
+                  display: inline-block;
+                "
+              >
+                <option value=" +86">+86</option>
+                <option value=" +086">+086</option>
+                <option value=" +0086">+0086</option>
+              </select>
+              <!--手机号-->
+              <input
+                type="text"
+                class="input"
+                autocomplete="cc-number"
+                maxlength="11"
+                placeholder="中国手机号"
+                required
+                style="
+                  border-style: hidden;
+                  height: 40px;
+                  width: 200px;
+                  font-size: 20px;
+                  outline: none;
+                "
+              />
+            </fieldset>
+          </div>
+          <br />
+          <!--验证码-->
+          <div class="user" style="width: 340px">
+            <fieldset class="greybackground">
+              <input
+                type="text"
+                class="input"
+                maxlength="6"
+                placeholder="验证码"
+                style="
+                  border-style: hidden;
+                  height: 40px;
+                  width: 200px;
+                  font-size: 20px;
+                  outline: none;
+                "
+              />
+              <input
+                type="button"
+                class="yzm"
+                value="获取验证码"
+                style="
+                  border-style: hidden;
+                  color: #08b2a0;
+                  font-size: 20px;
+                  outline: none;
+                "
+              />
+            </fieldset>
+          </div>
+          <!--注册/登录按钮-->
+          <input
+            type="submit"
+            class="submit"
+            value="注册/登录"
+            style="
+              width: 380px;
+              border-style: hidden;
+              height: 50px;
+              font-size: large;
+              color: white;
+              border-radius: 25px;
+              outline: none;
+              margin-top: 45px;
+            "
+          />
+        </form>
+
+        <!--其他登录方式-->
+        <p class="grey">—————其他登录方式—————</p>
+        <div id="tAp">
+          <a href="#" class="b" style="font-size: x-small">
+            <div
+              class="mmdl"
+              style="display: inline-block; width: 80px; margin-left: -25px"
+            >
+              <img
+                src="./account.png"
+                alt="密码登录"
+                class="mmdl1"
+                style="width: 40px"
+              />
+              <img
+                src="./account2.png"
+                alt="密码登录"
+                class="mmdl2"
+                style="width: 40px"
+              />
+              密码登录
+            </div>
+          </a>
+
+          <a href="#" class="b" style="font-size: x-small">
+            <div
+              class="weibo"
+              style="display: inline-block; width: 40px; margin: 0 50px 0 40px"
+            >
+              <img
+                src="./weibo.png"
+                alt="微博"
+                class="weibo1"
+                style="width: 40px"
+              />
+              <img
+                src="./weibo2.png"
+                alt="微博"
+                class="weibo2"
+                style="width: 40px"
+              />
+              微博
+            </div>
+          </a>
+
+          <a href="#" class="b" style="font-size: x-small">
+            <div class="QQ" style="display: inline-block; width: 40px">
+              <img
+                src="./qq.png"
+                alt="QQ"
+                class="QQ1"
+                style="width: 40px"
+              />
+              <img
+                src="./qq2.png"
+                alt="QQ"
+                class="QQ2"
+                style="width: 40px"
+              />
+              QQ
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div id="footer" style="margin-top: 30px">
+        <p class="grey" style="font-size: xx-small">
+          点击“注册/登录”按钮，即表示你同意
+          <a href="#" class="a">《注册协议》</a>
+          和
+          <a href="#" class="a">《隐私政策》</a>
+          <br />
+          牛客网©2020&nbsp;All&nbsp;Right&nbsp;Reserved
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
